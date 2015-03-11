@@ -39,6 +39,11 @@
     <dependencies>
         
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        
+        <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-broker</artifactId>
             <version>${activemq.version}</version>
@@ -76,4 +81,32 @@
      
     </dependencies>
     
+    
+    
+     <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            
+<!--            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <tasks>
+                        <copy file="src/main/java/rtsw/bootcamel/domain/jaxb.index" 
+                              tofile="target/classes/rtsw/bootcamel/domain/jaxb.index" />
+                    </tasks>
+                </configuration>
+            </plugin>-->
+        </plugins>
+    </build>
 </project>
