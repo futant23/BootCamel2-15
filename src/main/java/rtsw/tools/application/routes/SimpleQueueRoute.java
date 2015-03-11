@@ -22,7 +22,7 @@ public class SimpleQueueRoute extends RouteBuilder{
     
     @Override  public void configure() throws Exception {
         log.info("configure()");
-        from("activemq:topic:SIMPLEROUTE").to("log:info");
+        from("{{route.from}}").to("{{route.to}}");
     }
     
 }
