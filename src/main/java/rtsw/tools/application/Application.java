@@ -18,7 +18,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author b1050502
  */
 @SpringBootApplication
-public class Application implements CommandLineRunner{
+public class Application {
     
     private static final Logger log =LoggerFactory.getLogger(Application.class);
     
@@ -29,8 +29,5 @@ public class Application implements CommandLineRunner{
         SpringApplication.run(Application.class, args);
     }
 
-    @Override
-    public void run(String... strings) throws Exception {
-        log.info("run()");
-    }
+    
 }

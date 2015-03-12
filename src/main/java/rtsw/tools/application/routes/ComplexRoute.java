@@ -6,8 +6,6 @@
 package rtsw.tools.application.routes;
 
 import org.apache.camel.builder.RouteBuilder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 /**
@@ -15,14 +13,11 @@ import org.springframework.stereotype.Component;
  * @author b1050502
  */
 @Component
-public class SimpleQueueRoute extends RouteBuilder{
+public class ComplexRoute extends RouteBuilder{
 
-    private static final Logger log =LoggerFactory.getLogger(SimpleQueueRoute.class);
-    
-    
-    @Override  public void configure() throws Exception {
-        log.info("configure()");
-        from("{{route.from}}"). to("{{route.to}}");
+    @Override
+    public void configure() throws Exception {
+        from("activemq:queue:ROUTE").to("log:info");
     }
     
 }
